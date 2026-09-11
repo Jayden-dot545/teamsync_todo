@@ -45,9 +45,19 @@ class SharedPreferencesAuthSuccessStorage implements ClientAuthSuccessStorage {
 }
 
 Future<void> initializeServerpodClient() async {
+  const envApiUrl = String.fromEnvironment('API_URL');
   final String host;
-  if (kIsWeb) {
-    host = 'http://localhost:8080/';
+
+  if (envApiUrl.isNotEmpty) {
+    host = envApiUrl.endsWith('/') ? envApiUrl : '$envApiUrl/';
+  } else if (kIsWeb) {
+    // If running in browser and not localhost, dynamically use the origin domain
+    final origin = Uri.base.origin;
+    if (origin.isNotEmpty && !origin.contains('localhost') && !origin.contains('127.0.0.1')) {
+      host = '$origin/';
+    } else {
+      host = 'http://localhost:8080/';
+    }
   } else if (defaultTargetPlatform == TargetPlatform.android) {
     host = 'http://10.0.2.2:8080/';
   } else {

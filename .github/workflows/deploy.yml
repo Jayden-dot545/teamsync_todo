@@ -25,15 +25,8 @@ jobs:
           channel: 'master'
           cache: false
 
-      - name: 🎯 Setup Dart (Latest Stable)
-        uses: dart-lang/setup-dart@v1
-        with:
-          sdk: stable
-
       - name: 📦 Get Dependencies
-        run: |
-          dart pub get
-          cd todolist_flutter && flutter pub get
+        run: flutter pub get
 
       - name: 🌐 Build Flutter Web App
         run: |

@@ -2,43 +2,43 @@ version: '3.8'
 
 services:
   db:
-    image: postgres:16-alpine
+    image: 'postgres:16-alpine'
     container_name: todolist-db
     restart: always
     environment:
-      - POSTGRES_DB=${POSTGRES_DB:-todolist}
-      - POSTGRES_USER=${POSTGRES_USER:-postgres}
-      - POSTGRES_PASSWORD=${DB_PASSWORD:-EinSicheresPasswort123}
+      - 'POSTGRES_DB=${POSTGRES_DB:-todolist}'
+      - 'POSTGRES_USER=${POSTGRES_USER:-postgres}'
+      - 'POSTGRES_PASSWORD=${DB_PASSWORD:-EinSicheresPasswort123}'
     volumes:
       - todolist_db_data:/var/lib/postgresql/data
     networks:
       - todolist_network
 
   server:
-    image: ${IMAGE_NAME:-ghcr.io/jayden-dot545/teamsync_todo/server:latest}
+    image: '${IMAGE_NAME:-ghcr.io/jayden-dot545/teamsync_todo/server:latest}'
     container_name: todolist-server
     restart: always
     depends_on:
       - db
     environment:
-      - runmode=${RUN_MODE:-production}
-      - serverid=${SERVER_ID:-default}
-      - logging=${LOGGING_MODE:-normal}
-      - role=${SERVER_ROLE:-monolith}
-      - SERVERPOD_APPLY_MIGRATIONS=${APPLY_MIGRATIONS:-true}
-      - SERVERPOD_API_SERVER_PUBLIC_HOST=${PUBLIC_HOST:-localhost}
-      - SERVERPOD_API_SERVER_PUBLIC_PORT=${PUBLIC_PORT:-443}
-      - SERVERPOD_API_SERVER_PUBLIC_SCHEME=${PUBLIC_SCHEME:-https}
-      - SERVERPOD_DATABASE_HOST=${DB_HOST:-db}
-      - SERVERPOD_DATABASE_PORT=${DB_PORT:-5432}
-      - SERVERPOD_DATABASE_NAME=${POSTGRES_DB:-todolist}
-      - SERVERPOD_DATABASE_USER=${POSTGRES_USER:-postgres}
-      - SERVERPOD_DATABASE_REQUIRE_SSL=${DB_REQUIRE_SSL:-false}
-      - SERVERPOD_PASSWORD_database=${DB_PASSWORD:-EinSicheresPasswort123}
-      - SERVERPOD_PASSWORD_serviceSecret=${SERVICE_SECRET:-DeinGeheimesServiceSecretHier123}
+      - 'runmode=${RUN_MODE:-production}'
+      - 'serverid=${SERVER_ID:-default}'
+      - 'logging=${LOGGING_MODE:-normal}'
+      - 'role=${SERVER_ROLE:-monolith}'
+      - 'SERVERPOD_APPLY_MIGRATIONS=${APPLY_MIGRATIONS:-true}'
+      - 'SERVERPOD_API_SERVER_PUBLIC_HOST=${PUBLIC_HOST:-localhost}'
+      - 'SERVERPOD_API_SERVER_PUBLIC_PORT=${PUBLIC_PORT:-443}'
+      - 'SERVERPOD_API_SERVER_PUBLIC_SCHEME=${PUBLIC_SCHEME:-https}'
+      - 'SERVERPOD_DATABASE_HOST=${DB_HOST:-db}'
+      - 'SERVERPOD_DATABASE_PORT=${DB_PORT:-5432}'
+      - 'SERVERPOD_DATABASE_NAME=${POSTGRES_DB:-todolist}'
+      - 'SERVERPOD_DATABASE_USER=${POSTGRES_USER:-postgres}'
+      - 'SERVERPOD_DATABASE_REQUIRE_SSL=${DB_REQUIRE_SSL:-false}'
+      - 'SERVERPOD_PASSWORD_database=${DB_PASSWORD:-EinSicheresPasswort123}'
+      - 'SERVERPOD_PASSWORD_serviceSecret=${SERVICE_SECRET:-DeinGeheimesServiceSecretHier123}'
     ports:
-      - "${API_PORT:-8080}:8080"
-      - "${WEB_PORT:-8082}:8082"
+      - '${API_PORT:-8080}:8080'
+      - '${WEB_PORT:-8082}:8082'
     networks:
       - todolist_network
 

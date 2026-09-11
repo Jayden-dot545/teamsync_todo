@@ -15,7 +15,7 @@ services:
       - todolist_network
 
   server:
-    image: '${IMAGE_NAME:-ghcr.io/jayden-dot545/teamsync_todo/server:latest}'
+    image: '${SERVER_IMAGE_NAME:-ghcr.io/jayden-dot545/teamsync_todo/server:latest}'
     container_name: todolist-server
     restart: always
     depends_on:
@@ -44,7 +44,17 @@ services:
       - 'SERVERPOD_PASSWORD_emailSecretHashPepper=${EMAIL_SECRET_PEPPER:-BKvLQw22SWrFlWnfZSO-Kd7iGglf-VYr}'
     ports:
       - '${API_PORT:-8080}:8080'
-      - '${WEB_PORT:-8082}:8082'
+    networks:
+      - todolist_network
+
+  client:
+    image: '${CLIENT_IMAGE_NAME:-ghcr.io/jayden-dot545/teamsync_todo/client:latest}'
+    container_name: todolist-client
+    restart: always
+    depends_on:
+      - server
+    ports:
+      - '${CLIENT_PORT:-8082}:80'
     networks:
       - todolist_network
 

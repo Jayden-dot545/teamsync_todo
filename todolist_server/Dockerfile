@@ -4,9 +4,7 @@
 # Build stage
 FROM dart:stable AS build
 
-# Create a minimal workspace that preserves locked server dependency versions.
 WORKDIR /app
-COPY pubspec.lock .
 COPY todolist_server todolist_server
 RUN printf '%s\n' \
   'name: _' \

@@ -17,7 +17,7 @@ services:
 
   # 2. Serverpod Backend & Web-App (automatisch aus GHCR gebaut)
   server:
-    image: ${IMAGE_NAME:-ghcr.io/your-github-username/todolist/server:latest}
+    image: ${IMAGE_NAME:-ghcr.io/jayden-dot545/teamsync_todo/server:latest}
     container_name: todolist-server
     restart: always
     depends_on:

@@ -10,6 +10,14 @@ services:
       - 'POSTGRES_USER=${POSTGRES_USER:-postgres}'
       - 'POSTGRES_PASSWORD=${DB_PASSWORD:-EinSicheresPasswort123}'
       - 'POSTGRES_HOST_AUTH_METHOD=trust'
+    command:
+      - sh
+      - -c
+      - |
+        if [ -f /var/lib/postgresql/data/pg_hba.conf ]; then
+          sed -i '1i host all all all trust' /var/lib/postgresql/data/pg_hba.conf
+        fi
+        exec docker-entrypoint.sh postgres
     volumes:
       - todolist_db_data:/var/lib/postgresql/data
     networks:

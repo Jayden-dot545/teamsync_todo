@@ -26,10 +26,10 @@ services:
       - 'logging=${LOGGING_MODE:-normal}'
       - 'role=${SERVER_ROLE:-monolith}'
       - 'SERVERPOD_APPLY_MIGRATIONS=${APPLY_MIGRATIONS:-true}'
-      - 'SERVERPOD_API_SERVER_PUBLIC_HOST=${PUBLIC_HOST:-localhost}'
+      - 'SERVERPOD_API_SERVER_PUBLIC_HOST=${API_HOST:-localhost}'
       - 'SERVERPOD_API_SERVER_PUBLIC_PORT=${PUBLIC_PORT:-443}'
       - 'SERVERPOD_API_SERVER_PUBLIC_SCHEME=${PUBLIC_SCHEME:-https}'
-      - 'SERVERPOD_WEB_SERVER_PUBLIC_HOST=${PUBLIC_HOST:-localhost}'
+      - 'SERVERPOD_WEB_SERVER_PUBLIC_HOST=${WEB_HOST:-localhost}'
       - 'SERVERPOD_WEB_SERVER_PUBLIC_PORT=${PUBLIC_PORT:-443}'
       - 'SERVERPOD_WEB_SERVER_PUBLIC_SCHEME=${PUBLIC_SCHEME:-https}'
       - 'SERVERPOD_DATABASE_HOST=${DB_HOST:-db}'
@@ -43,7 +43,7 @@ services:
       - 'SERVERPOD_PASSWORD_jwtHmacSha512PrivateKey=${JWT_PRIVATE_KEY:-dCle2CzkOCJyMvTwvtr4-GnSuik-qpKX}'
       - 'SERVERPOD_PASSWORD_emailSecretHashPepper=${EMAIL_SECRET_PEPPER:-BKvLQw22SWrFlWnfZSO-Kd7iGglf-VYr}'
     ports:
-      - '${API_PORT:-8080}:8080'
+      - '${SERVER_PORT:-8080}:8080'
     networks:
       - todolist_network
 
@@ -53,6 +53,8 @@ services:
     restart: always
     depends_on:
       - server
+    environment:
+      - 'API_URL=${API_URL:-https://localhost}'
     ports:
       - '${CLIENT_PORT:-8082}:80'
     networks:

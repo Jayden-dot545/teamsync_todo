@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:flutter/foundation.dart';
+import 'package:flutter/services.dart' show rootBundle;
 import 'package:serverpod_auth_idp_flutter/serverpod_auth_idp_flutter.dart'
     hide Protocol;
 import 'package:serverpod_flutter/serverpod_flutter.dart';
@@ -46,23 +47,44 @@ class SharedPreferencesAuthSuccessStorage implements ClientAuthSuccessStorage {
 
 Future<void> initializeServerpodClient() async {
   const envApiUrl = String.fromEnvironment('API_URL');
-  final String host;
+  String host = '';
 
   if (envApiUrl.isNotEmpty) {
-    host = envApiUrl.endsWith('/') ? envApiUrl : '$envApiUrl/';
-  } else if (kIsWeb) {
-    // If running in browser and not localhost, dynamically use the origin domain
-    final origin = Uri.base.origin;
-    if (origin.isNotEmpty && !origin.contains('localhost') && !origin.contains('127.0.0.1')) {
-      host = '$origin/';
-    } else {
-      host = 'http://localhost:8080/';
-    }
-  } else if (defaultTargetPlatform == TargetPlatform.android) {
-    host = 'http://10.0.2.2:8080/';
+    host = envApiUrl.trim();
   } else {
-    // macOS, iOS Simulator, Windows, Linux (explicit IPv4 loopback)
-    host = 'http://127.0.0.1:8080/';
+    try {
+      final configJsonStr = await rootBundle.loadString('assets/config.json');
+      final configMap = jsonDecode(configJsonStr) as Map<String, dynamic>;
+      final configApiUrl = configMap['apiUrl'] as String?;
+      if (configApiUrl != null &&
+          configApiUrl.trim().isNotEmpty &&
+          !configApiUrl.contains('localhost')) {
+        host = configApiUrl.trim();
+      }
+    } catch (_) {}
+  }
+
+  if (host.isEmpty) {
+    if (kIsWeb) {
+      // If running in browser, use current origin domain
+      final origin = Uri.base.origin;
+      if (origin.isNotEmpty &&
+          !origin.contains('localhost') &&
+          !origin.contains('127.0.0.1')) {
+        host = origin;
+      } else {
+        host = 'http://localhost:8080';
+      }
+    } else if (defaultTargetPlatform == TargetPlatform.android) {
+      host = 'http://10.0.2.2:8080';
+    } else {
+      // macOS, iOS Simulator, Windows, Linux
+      host = 'http://127.0.0.1:8080';
+    }
+  }
+
+  if (!host.endsWith('/')) {
+    host = '$host/';
   }
 
   client = Client(host)..connectivityMonitor = FlutterConnectivityMonitor();

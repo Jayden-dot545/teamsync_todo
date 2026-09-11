@@ -22,8 +22,13 @@ jobs:
       - name: 🐦 Setup Flutter
         uses: subosito/flutter-action@v2
         with:
-          channel: 'stable'
-          cache: true
+          channel: 'master'
+          cache: false
+
+      - name: 🎯 Setup Dart (Latest Stable)
+        uses: dart-lang/setup-dart@v1
+        with:
+          sdk: stable
 
       - name: 📦 Get Dependencies
         run: dart pub get

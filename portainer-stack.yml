@@ -36,6 +36,9 @@ services:
       - 'SERVERPOD_DATABASE_REQUIRE_SSL=${DB_REQUIRE_SSL:-false}'
       - 'SERVERPOD_PASSWORD_database=${DB_PASSWORD:-EinSicheresPasswort123}'
       - 'SERVERPOD_PASSWORD_serviceSecret=${SERVICE_SECRET:-DeinGeheimesServiceSecretHier123}'
+      - 'SERVERPOD_PASSWORD_jwtRefreshTokenHashPepper=${JWT_REFRESH_PEPPER:-xtxwqR-2dMf1MfTc91ziWZQQIoG1OSJF}'
+      - 'SERVERPOD_PASSWORD_jwtHmacSha512PrivateKey=${JWT_PRIVATE_KEY:-dCle2CzkOCJyMvTwvtr4-GnSuik-qpKX}'
+      - 'SERVERPOD_PASSWORD_emailSecretHashPepper=${EMAIL_SECRET_PEPPER:-BKvLQw22SWrFlWnfZSO-Kd7iGglf-VYr}'
     ports:
       - '${API_PORT:-8080}:8080'
       - '${WEB_PORT:-8082}:8082'

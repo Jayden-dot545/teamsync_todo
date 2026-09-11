@@ -1,0 +1,30 @@
+class: TodoItem
+table: todo_item
+fields:
+  todoList: TodoList?, relation(onDelete=Cascade)
+  title: String
+  description: String?
+  isCompleted: bool
+  completedAt: DateTime?
+  completedByUserId: UuidValue?
+  completedByName: String?
+  dueDate: DateTime?
+  priority: TodoPriority
+  assignedToUserId: UuidValue?
+  assignedToName: String?
+  createdById: UuidValue
+  createdByName: String?
+  createdAt: DateTime
+  updatedAt: DateTime?
+  sortOrder: double
+  totalDurationSeconds: int?
+  timerStartedAt: DateTime?
+  isTimerRunning: bool?
+  timerUserId: UuidValue?
+  timerUserName: String?
+  subtasksJson: String?
+  workSessionsJson: String?
+  recurrence: String?
+indexes:
+  todo_item_list_idx:
+    fields: todoListId

@@ -1,0 +1,44 @@
+version: '3.8'
+
+services:
+  # 1. PostgreSQL 16 Datenbank
+  db:
+    image: postgres:16-alpine
+    container_name: todolist-db
+    restart: always
+    environment:
+      POSTGRES_DB: todolist
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-EinSicheresPasswort123!}
+    volumes:
+      - todolist_db_data:/var/lib/postgresql/data
+    networks:
+      - todolist_network
+
+  # 2. Serverpod Backend & Web-App (automatisch aus GHCR gebaut)
+  server:
+    image: ${IMAGE_NAME:-ghcr.io/your-github-username/todolist/server:latest}
+    container_name: todolist-server
+    restart: always
+    depends_on:
+      - db
+    environment:
+      runmode: production
+      serverid: default
+      logging: normal
+      role: monolith
+      SERVERPOD_PASSWORD_database: ${DB_PASSWORD:-EinSicheresPasswort123!}
+      SERVERPOD_PASSWORD_serviceSecret: ${SERVICE_SECRET:-DeinGeheimesServiceSecretHier123!}
+    ports:
+      - "8080:8080" # API & WebSockets
+      - "8082:8082" # Web-Frontend
+    networks:
+      - todolist_network
+
+volumes:
+  todolist_db_data:
+    driver: local
+
+networks:
+  todolist_network:
+    driver: bridge

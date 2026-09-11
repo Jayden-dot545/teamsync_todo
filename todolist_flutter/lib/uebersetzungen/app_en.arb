@@ -1,0 +1,187 @@
+{
+  "@@locale": "en",
+  "appTitle": "TeamSync ToDo",
+  "welcomeTitle": "Welcome to\nTeamSync ToDo",
+  "welcomeBackTitle": "Welcome back,\n{userName}!",
+  "@welcomeBackTitle": {
+    "placeholders": {
+      "userName": {
+        "type": "String"
+      }
+    }
+  },
+  "welcomeSubtitle": "Organize tasks, share lists with your team, and collaborate in real-time.",
+  "welcomeBackSubtitle": "Ready for another productive day? Tap the cards for details.",
+  "startNow": "Get Started",
+
+  "liveSyncTitle": "Live Synchronization",
+  "liveSyncShortDesc": "Changes and completed tasks appear instantly for all team members.",
+  "liveSyncDetailedDesc": "Task updates, status changes, and notes are streamed in milliseconds via WebSockets to all active viewers.",
+
+  "sharedListsTitle": "Shared Lists & Viewers",
+  "sharedListsShortDesc": "Invite team members or track progress in real-time as a viewer.",
+  "sharedListsDetailedDesc": "Work together as a team or supervise progress (e.g. remote interns or family projects).",
+
+  "prioritiesTitle": "Priorities & Due Dates",
+  "prioritiesShortDesc": "Keep key deadlines and urgent to-dos always in focus.",
+  "prioritiesDetailedDesc": "Structure your day with clear due dates, priority badges, and smart filters.",
+
+  "authWelcomeBack": "Welcome Back!",
+  "authSubtitle": "Sign in or create an account to get started right away.",
+  "authEncrypted": "Encrypted",
+  "authRealtimeSync": "Realtime Sync",
+  "authMultiUser": "Multi-User",
+  "authAccountAccess": "Account Access",
+  "authFooterNote": "Registration and login are seamlessly integrated.",
+  "authError": "Sign in error: {error}",
+  "@authError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+
+  "listsOverview": "Lists Overview",
+  "myLists": "My Lists",
+  "allTab": "All",
+  "ownedTab": "Owned",
+  "sharedTab": "Shared",
+  "searchLists": "Search lists...",
+  "newList": "New List",
+  "noListsFound": "No lists found",
+  "createFirstList": "Create your first ToDo list and invite team members!",
+  "deleteList": "Delete List",
+  "deleteListConfirm": "Are you sure you want to permanently delete \"{title}\"?",
+  "@deleteListConfirm": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "leaveList": "Leave List",
+  "leaveListConfirm": "Are you sure you want to leave \"{title}\"?",
+  "@leaveListConfirm": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+
+  "cancel": "Cancel",
+  "delete": "Delete",
+  "leave": "Leave",
+  "save": "Save",
+  "edit": "Edit",
+  "close": "Close",
+  "create": "Create",
+  "done": "Done",
+
+  "tasksTitle": "Tasks",
+  "filterAll": "All",
+  "filterActive": "Active",
+  "filterCompleted": "Completed",
+  "filterHighPriority": "High Priority",
+  "filterAssignedToMe": "Assigned to Me",
+  "addTask": "Add Task",
+  "editTask": "Edit Task",
+  "taskTitle": "What needs to be done?",
+  "taskDescription": "Details or notes (optional)...",
+  "priority": "Priority",
+  "priorityLow": "Low",
+  "priorityMedium": "Medium",
+  "priorityHigh": "High",
+  "dueDate": "Due Date",
+  "assignTo": "Assign to...",
+  "nobody": "Nobody",
+
+  "subtasks": "Subtasks & Steps",
+  "addSubtask": "Add subtask...",
+  
+  "workTimerActive": "Time tracking active",
+  "workTimerRecorded": "Tracked work time",
+  "timerRunningSession": "Current session: {time}",
+  "@timerRunningSession": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "timerTotalTime": "Total time spent: {time}",
+  "@timerTotalTime": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "startTimer": "Start",
+  "pauseTimer": "Pause",
+  "activeBadge": "Active: {time}",
+  "@activeBadge": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "usedBadge": "Spent: {time}",
+  "@usedBadge": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "completedBy": "Completed by {name}",
+  "@completedBy": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+
+  "dueOverdue": "Overdue",
+  "dueToday": "Today",
+  "dueTomorrow": "Tomorrow",
+
+  "roleOwner": "Lead / Owner",
+  "roleEditor": "Member / Editor",
+  "roleViewer": "Viewer (Read only)",
+
+  "settings": "Settings",
+  "themeMode": "Appearance",
+  "themeDark": "Dark",
+  "themeLight": "Light",
+  "themeSystem": "System",
+  "notifications": "Live Sync & Notifications",
+  "notificationsDesc": "Realtime updates for task changes and chat",
+  "clearCache": "Clear Local Cache",
+  "clearCacheDesc": "Cleans temporary stored data",
+  "signOut": "Sign Out",
+  "resetPassword": "Reset Password",
+
+  "profileEdit": "Edit Profile",
+  "profileSaved": "Profile saved successfully!",
+  "language": "Language",
+  "languageDe": "German (Deutsch)",
+  "languageEn": "English",
+  "languageSystem": "System (Default)",
+  "exportCsv": "Export work times as CSV",
+  "exportTaskCsv": "Export task times as CSV",
+  "copyCsv": "Copy CSV to clipboard",
+  "downloadCsv": "Download / share CSV file",
+  "copiedToClipboard": "Copied to clipboard!",
+  "csvExportSuccess": "CSV exported successfully",
+  "taskWorkTimes": "Task Work Sessions & Time Tracking",
+
+  "chatTitle": "Team Chat & Messages",
+  "chatTabTeam": "Team Chat",
+  "chatTabPrivate": "Private DMs",
+  "chatPlaceholder": "Write a message...",
+  "send": "Send"
+}

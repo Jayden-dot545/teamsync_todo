@@ -1,0 +1,30 @@
+services:
+  # Development services
+  postgres:
+    image: pgvector/pgvector:pg16
+    ports:
+      - "8090:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_DB: todolist
+      POSTGRES_PASSWORD: "S_XToaKXyYFWaFlLLM5S4hFXujKM7ho6"
+    volumes:
+      - todolist_data:/var/lib/postgresql/data
+
+
+  # Test services
+  postgres_test:
+    image: pgvector/pgvector:pg16
+    ports:
+      - "9090:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_DB: todolist_test
+      POSTGRES_PASSWORD: "YQ1x1f-3ZjffntPxOw6AQG0W6yvcTLbT"
+    volumes:
+      - todolist_test_data:/var/lib/postgresql/data
+
+
+volumes:
+  todolist_data:
+  todolist_test_data:

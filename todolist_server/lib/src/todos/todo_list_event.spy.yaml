@@ -1,0 +1,12 @@
+class: TodoListEvent
+fields:
+  todoListId: int
+  eventType: TodoEventType
+  todoItem: TodoItem?
+  todoItemId: int?
+  member: TodoListMember?
+  chatMessage: TodoChatMessage?
+  note: TodoNote?
+  noteId: int?
+  actorName: String?
+  timestamp: DateTime

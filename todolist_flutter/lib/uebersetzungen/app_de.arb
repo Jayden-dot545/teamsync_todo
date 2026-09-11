@@ -1,0 +1,187 @@
+{
+  "@@locale": "de",
+  "appTitle": "TeamSync ToDo",
+  "welcomeTitle": "Willkommen bei\nTeamSync ToDo",
+  "welcomeBackTitle": "Willkommen zurück,\n{userName}!",
+  "@welcomeBackTitle": {
+    "placeholders": {
+      "userName": {
+        "type": "String"
+      }
+    }
+  },
+  "welcomeSubtitle": "Organisiere deine Aufgaben, teile Listen mit deinem Team und arbeite in Echtzeit zusammen.",
+  "welcomeBackSubtitle": "Bereit für deinen nächsten produktiven Tag? Tippe auf die Kacheln für Details.",
+  "startNow": "Jetzt starten",
+
+  "liveSyncTitle": "Live-Synchronisation",
+  "liveSyncShortDesc": "Änderungen und abgehakte Aufgaben erscheinen sofort bei allen Teammitgliedern.",
+  "liveSyncDetailedDesc": "Veränderungen an Aufgaben, Statuswechsel und Notizen werden über WebSockets in Millisekunden an alle aktiven Betrachter übertragen.",
+
+  "sharedListsTitle": "Gemeinsame Listen & Zuschauer",
+  "sharedListsShortDesc": "Lade Kollegen ein oder verfolge als Zuschauer den Live-Fortschritt.",
+  "sharedListsDetailedDesc": "Arbeite im Team oder behalte den Überblick als Beobachter (z. B. Praktikanten im Home-Office oder Familien-Aufgaben).",
+
+  "prioritiesTitle": "Prioritäten & Fälligkeit",
+  "prioritiesShortDesc": "Behalte wichtige Deadlines und dringende ToDos immer im Fokus.",
+  "prioritiesDetailedDesc": "Strukturiere deinen Tag mit klaren Fälligkeitsdaten, Prioritäts-Kennzeichnungen und intelligenten Filtern.",
+
+  "authWelcomeBack": "Willkommen zurück!",
+  "authSubtitle": "Melde dich an oder erstelle ein Konto, um sofort loszulegen.",
+  "authEncrypted": "Verschlüsselt",
+  "authRealtimeSync": "Echtzeit Sync",
+  "authMultiUser": "Multi-User",
+  "authAccountAccess": "Konto-Zugang",
+  "authFooterNote": "Registrierung und Login sind nahtlos integriert. Keine zusätzliche Bestätigung im Browser nötig.",
+  "authError": "Fehler bei der Anmeldung: {error}",
+  "@authError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+
+  "listsOverview": "Listen-Übersicht",
+  "myLists": "Meine Listen",
+  "allTab": "Alle",
+  "ownedTab": "Eigene",
+  "sharedTab": "Geteilt",
+  "searchLists": "Listen durchsuchen...",
+  "newList": "Neue Liste",
+  "noListsFound": "Keine Listen gefunden",
+  "createFirstList": "Erstelle deine erste ToDo-Liste und lade Teammitglieder ein!",
+  "deleteList": "Liste löschen",
+  "deleteListConfirm": "Möchtest du die Liste \"{title}\" wirklich unwiderruflich löschen?",
+  "@deleteListConfirm": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "leaveList": "Aus Liste austreten",
+  "leaveListConfirm": "Möchtest du die Liste \"{title}\" wirklich verlassen?",
+  "@leaveListConfirm": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+
+  "cancel": "Abbrechen",
+  "delete": "Löschen",
+  "leave": "Austreten",
+  "save": "Speichern",
+  "edit": "Bearbeiten",
+  "close": "Schließen",
+  "create": "Erstellen",
+  "done": "Fertig",
+
+  "tasksTitle": "Aufgaben",
+  "filterAll": "Alle",
+  "filterActive": "Offen",
+  "filterCompleted": "Erledigt",
+  "filterHighPriority": "Hohe Prio",
+  "filterAssignedToMe": "Meine",
+  "addTask": "Aufgabe hinzufügen",
+  "editTask": "Aufgabe bearbeiten",
+  "taskTitle": "Was ist zu tun?",
+  "taskDescription": "Details oder Notizen (optional)...",
+  "priority": "Priorität",
+  "priorityLow": "Niedrig",
+  "priorityMedium": "Mittel",
+  "priorityHigh": "Hoch",
+  "dueDate": "Fälligkeitsdatum",
+  "assignTo": "Zuweisen an...",
+  "nobody": "Niemand",
+
+  "subtasks": "Unteraufgaben & Teilschritte",
+  "addSubtask": "Teilschritt hinzufügen...",
+  
+  "workTimerActive": "Zeiterfassung aktiv",
+  "workTimerRecorded": "Erfasste Arbeitszeit",
+  "timerRunningSession": "Laufende Session: {time}",
+  "@timerRunningSession": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "timerTotalTime": "Bisher gebraucht: {time}",
+  "@timerTotalTime": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "startTimer": "Starten",
+  "pauseTimer": "Pausieren",
+  "activeBadge": "Aktiv: {time}",
+  "@activeBadge": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "usedBadge": "Gebraucht: {time}",
+  "@usedBadge": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "completedBy": "Erledigt von {name}",
+  "@completedBy": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+
+  "dueOverdue": "Überfällig",
+  "dueToday": "Heute",
+  "dueTomorrow": "Morgen",
+
+  "roleOwner": "Chef / Projektleitung",
+  "roleEditor": "Mitarbeiter / Bearbeiter",
+  "roleViewer": "Zuschauer (Nur Leserechte)",
+
+  "settings": "Einstellungen",
+  "themeMode": "Erscheinungsbild",
+  "themeDark": "Dunkel",
+  "themeLight": "Hell",
+  "themeSystem": "System",
+  "notifications": "Live-Synchronisation & Benachrichtigungen",
+  "notificationsDesc": "Echtzeit-Updates für Änderungen und Chats",
+  "clearCache": "Lokalen Cache leeren",
+  "clearCacheDesc": "Bereinigt zwischengespeicherte Daten",
+  "signOut": "Abmelden",
+  "resetPassword": "Passwort zurücksetzen",
+
+  "profileEdit": "Benutzerprofil bearbeiten",
+  "profileSaved": "Profil erfolgreich gespeichert!",
+  "language": "Sprache",
+  "languageDe": "Deutsch",
+  "languageEn": "English",
+  "languageSystem": "System (Standard)",
+  "exportCsv": "Arbeitszeiten als CSV exportieren",
+  "exportTaskCsv": "Aufgaben-Zeiten als CSV exportieren",
+  "copyCsv": "CSV in Zwischenablage kopieren",
+  "downloadCsv": "CSV-Datei herunterladen / teilen",
+  "copiedToClipboard": "In die Zwischenablage kopiert!",
+  "csvExportSuccess": "CSV erfolgreich exportiert",
+  "taskWorkTimes": "Zeiterfassung & Arbeitsphasen",
+
+  "chatTitle": "Team-Chat & Nachrichten",
+  "chatTabTeam": "Team-Chat",
+  "chatTabPrivate": "Private DMs",
+  "chatPlaceholder": "Nachricht schreiben...",
+  "send": "Senden"
+}

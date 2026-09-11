@@ -1,0 +1,15 @@
+class: TodoChatMessage
+table: todo_chat_message
+fields:
+  todoList: TodoList?, relation(onDelete=Cascade)
+  senderUserId: UuidValue
+  senderName: String
+  senderRole: MemberRole
+  recipientUserId: UuidValue?
+  recipientName: String?
+  isPrivate: bool?
+  message: String
+  sentAt: DateTime
+indexes:
+  todo_chat_message_list_time_idx:
+    fields: todoListId, sentAt

@@ -1,0 +1,15 @@
+class: TodoListMember
+table: todo_list_member
+fields:
+  todoList: TodoList?, relation(onDelete=Cascade)
+  userId: UuidValue?
+  userEmail: String?
+  userName: String?
+  userBio: String?
+  userAvatar: String?
+  userStatus: String?
+  role: MemberRole
+  joinedAt: DateTime
+indexes:
+  todo_list_member_list_email_idx:
+    fields: todoListId, userEmail

@@ -1,0 +1,14 @@
+class: TodoList
+table: todo_list
+fields:
+  title: String
+  description: String?
+  color: int
+  ownerId: UuidValue
+  inviteCode: String?
+  createdAt: DateTime
+  updatedAt: DateTime?
+indexes:
+  todo_list_invite_code_idx:
+    fields: inviteCode
+    unique: true

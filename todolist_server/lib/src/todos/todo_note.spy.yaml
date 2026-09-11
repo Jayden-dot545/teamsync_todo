@@ -1,0 +1,15 @@
+class: TodoNote
+table: todo_note
+fields:
+  title: String
+  content: String
+  todoListId: int
+  createdById: UuidValue
+  createdByName: String?
+  color: int?
+  isPinned: bool
+  createdAt: DateTime
+  updatedAt: DateTime?
+indexes:
+  todo_note_list_idx:
+    fields: todoListId

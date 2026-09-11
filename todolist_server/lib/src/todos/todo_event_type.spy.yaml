@@ -1,0 +1,13 @@
+enum: TodoEventType
+values:
+  - itemCreated
+  - itemUpdated
+  - itemDeleted
+  - listUpdated
+  - listDeleted
+  - memberJoined
+  - memberRemoved
+  - chatMessageSent
+  - noteCreated
+  - noteUpdated
+  - noteDeleted

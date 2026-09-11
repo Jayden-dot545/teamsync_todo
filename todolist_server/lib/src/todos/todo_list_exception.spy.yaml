@@ -1,0 +1,4 @@
+exception: TodoListException
+fields:
+  message: String
+  statusCode: int

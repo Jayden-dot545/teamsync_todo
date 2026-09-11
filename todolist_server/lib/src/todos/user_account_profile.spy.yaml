@@ -1,0 +1,18 @@
+class: UserAccountProfile
+table: user_account_profile
+fields:
+  userId: UuidValue
+  email: String?
+  displayName: String?
+  bio: String?
+  avatarIndex: int?
+  avatarEmoji: String?
+  status: String?
+  themeMode: String?
+  notificationsEnabled: bool?
+  locale: String?
+  updatedAt: DateTime
+indexes:
+  user_account_profile_user_idx:
+    fields: userId
+    unique: true

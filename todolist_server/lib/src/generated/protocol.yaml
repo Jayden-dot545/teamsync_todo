@@ -1,0 +1,50 @@
+emailIdp:
+  - login:
+  - startRegistration:
+  - verifyRegistrationCode:
+  - finishRegistration:
+  - startPasswordReset:
+  - verifyPasswordResetCode:
+  - finishPasswordReset:
+  - hasAccount:
+jwtRefresh:
+  - refreshAccessToken:
+greeting:
+  - hello:
+todoItem:
+  - getItems:
+  - createItem:
+  - updateItem:
+  - toggleSubtask:
+  - toggleComplete:
+  - startTimer:
+  - pauseTimer:
+  - deleteItem:
+  - reorderItems:
+  - getActivities:
+todoList:
+  - getLists:
+  - setDisplayName:
+  - getDisplayName:
+  - createList:
+  - updateList:
+  - deleteList:
+  - getMembers:
+  - inviteMember:
+  - getOrCreateInviteCode:
+  - joinListByInviteCode:
+  - removeMember:
+  - sendChatMessage:
+  - getChatMessages:
+  - getUserProfileData:
+  - getCurrentUserEmail:
+  - saveUserProfileData:
+  - updateUserProfileInfo:
+  - getMemberProfile:
+  - watchList:
+todoNote:
+  - getNotes:
+  - createNote:
+  - updateNote:
+  - togglePin:
+  - deleteNote:

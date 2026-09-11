@@ -1,0 +1,13 @@
+class: TodoActivity
+table: todo_activity
+fields:
+  todoList: TodoList?, relation(onDelete=Cascade)
+  actorUserId: UuidValue?
+  actorName: String
+  actionType: String
+  details: String
+  targetTitle: String?
+  timestamp: DateTime
+indexes:
+  todo_activity_list_time_idx:
+    fields: todoListId, timestamp

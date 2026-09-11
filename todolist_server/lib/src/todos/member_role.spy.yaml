@@ -1,0 +1,5 @@
+enum: MemberRole
+values:
+  - owner
+  - editor
+  - viewer

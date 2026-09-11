@@ -22,12 +22,8 @@ jobs:
       - name: 🐦 Setup Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.38.4'
           channel: 'stable'
           cache: true
-
-      - name: 🎯 Setup Dart
-        uses: dart-lang/setup-dart@v1
 
       - name: 📦 Get Dependencies
         run: dart pub get

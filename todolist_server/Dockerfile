@@ -2,7 +2,7 @@
 # docker build -f todolist_server/Dockerfile .
 
 # Build stage
-FROM dart:3.10.3 AS build
+FROM dart:stable AS build
 
 # Create a minimal workspace that preserves locked server dependency versions.
 WORKDIR /app
@@ -11,7 +11,7 @@ COPY todolist_server todolist_server
 RUN printf '%s\n' \
   'name: _' \
   'environment:' \
-  '  sdk: ^3.10.3' \
+  '  sdk: ^3.12.2' \
   'workspace:' \
   '  - todolist_server' \
   > pubspec.yaml
